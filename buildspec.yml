@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8   # or your preferred Python version
+    commands:
+      - pip install --upgrade pip
+      - pip install -r requirements.txt
+
+  pre_build:
+    commands:
+      - echo "Pre-build phase started"
+
+  build:
+    commands:
+      - echo "Build phase started"
+      # Add any build commands you need, e.g., tests or packaging scripts
+
+  post_build:
+    commands:
+      - echo "Post-build phase started"
+      # You can add commands to prepare for deployment here
+
+artifacts:
+  files:
+    - '**/*'   # Adjust this if you want to limit what gets passed to next stage
